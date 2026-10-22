@@ -1,24 +1,29 @@
 package com.example.sample;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        Button send = findViewById(R.id.sendRequest);
+        Button openResponse = findViewById(R.id.openResponse);
+
+        send.setOnClickListener(view -> {
+            Intent request = new Intent("com.example.sample.REQUEST");
+            request.setClass(this, RequestReceiver.class);
+            request.putExtra("message", "Hello from MainActivity");
+            sendBroadcast(request);
+            Toast.makeText(this, "Request sent", Toast.LENGTH_SHORT).show();
         });
+
+        openResponse.setOnClickListener(view ->
+                startActivity(new Intent(this, ResponderActivity.class)));
     }
 }
