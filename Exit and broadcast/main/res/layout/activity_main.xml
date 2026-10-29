@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8D009688"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!--    <Button-->
+    <!--        android:id="@+id/sendRequest"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Send Request" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/openResponse"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Open Response Activity" />-->
+
+
+    <TextView
+        android:id="@+id/networkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Internet Status"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Waiting for request"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#66009688"
+        android:text="Send Request" />
+
+    <Button
+        android:id="@+id/responseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#8103A9F4"
+        android:text="Open Response Activity" />
+
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C1FD1414"
+        android:text="Exit" />
+
+</LinearLayout>
